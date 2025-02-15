@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use LiveWire\WithPagination;
 
+
 class UserController extends Controller
 {
     // use WithPagination;
@@ -16,7 +17,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
 
-        $query = $request->input('query');
+        $query = $request->input('search');
 
         // Búsqueda por nombre o email en users
         $user = User::where('name', 'LIKE', '%' . $query . '%')->orWhere('email', 'LIKE', '%' . $query . '%');

@@ -2,13 +2,13 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('¡!') }}
+                {{ __('¡Donde los gamers hablan y los mundos cobran vida!') }}
             </h2>
             <div class="flex gap-4">
                 <a href="{{ route('dashboard') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow">
                     Foro
                 </a>
-                <a href="{{ route('ranking') }}" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow">
+                <a href="{{ route('ranking') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow">
                     Ranking
                 </a>
             </div>

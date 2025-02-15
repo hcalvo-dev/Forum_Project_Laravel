@@ -19,17 +19,22 @@ Route::get('/ranking', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile', [ProfileController::class, 'actualizarImagen'])->name('profile.actualizarImagen');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Rutas exclusivas de admin 
+// Rutas exclusivas de admin
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/usuarios', [UserController::class, 'index'])->name('administrar.users.index');
     Route::get('/usuarios/edit', [UserController::class, 'editar'])->name('administrar.users.edit');
+    Route::get('/usuarios/destroy', [UserController::class, 'editar'])->name('administrar.users.destroy');
 });
 
 // Rutas exclusivas de editor
-
+Route::middleware(['role:editor'])->group(function () {
+    Route::get('/usuarios_editor', [UserController::class, 'index'])->name('administrar.users.index');
+    Route::get('/usuarios_editor/edit', [UserController::class, 'editar'])->name('administrar.users.edit');
+});
 
 // Rutas exclusivas de usuario
 
